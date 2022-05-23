@@ -1,164 +1,200 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<link
-		href="https://fonts.googleapis.com/css2?family=Bad+Script&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-		rel="stylesheet">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	<link rel="stylesheet" media="(min-width: 350px) and (max-width: 700px)" href="css/index_max_700.css">
-	<link rel="stylesheet" media="(min-width: 701px) and (max-width: 900px)" href="css/index_max_900.css">
-	<link rel="stylesheet" media="(min-width: 901px) and (max-width: 1200px)" href="css/index_max_1200.css">
-	<link rel="stylesheet" media="(min-width: 1201px)" href="css/index_min_1201.css">
-	<title>Document</title>
+	<link href="https://fonts.googleapis.com/css2?family=Koulen&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:ital,wght@1,800&family=Oswald:wght@300&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="css/style_min_1201.css">
+	<title>DmitryVarchak</title>
 </head>
-
 <body>
-	<div class="wrapper" id="wrapper">
-		<header id="header">
-			<img src="image/headerBack.jpg" alt="" class="header__back">
-			<div id="blind"></div>
-			<div class="content__container">
-				<menu id="menu">
-					<div id="logo">
-						<p><img src="image/LogoColorEng6.png" alt="logo" id="logo__image"></p>
+	<header id="header">
+		<img src="images/headerBackground.jpg" alt="" />
+		<div id="blind"></div>
+		<menu>
+			<div class="menu__conteiner">
+				<div class="logo"><p>Dmitry Varchak</p></div>
+				<div id="navigation">
+					<div class="navigation-button__box">
+						<button id="home">ГЛАВНАЯ</button>
+						<button id="about__me">ОБО МНЕ</button>
+						<button id="skills">УМЕНИЯ</button>
+						<button id="portfolio">ПОТРФОЛИО</button>
+						<button id="contacts">КОНТАКТЫ</button>
 					</div>
-					<div id="mobile__nav" class="menu__visible">
-						<p><span class="material-icons icon__size menu__visible">
-								menu
-							</span></p>
-						<div id="nav__box" class="nav__box nav__box__invisible">
-							<button id="home" class="nav__button">главная</button>
-							<button id="about__nav" class="nav__button">обо мне</button>
-							<button id="portfolio" class="nav__button">портфолио</button>
-							<button id="skills" class="nav__button">мои инструменты</button>
-							<button id="contacts" class="nav__button">контакты</button>
-						</div>
-					</div>
-					
-						<div id="nav__box" class="nav__box nav__box__invisible">
-							<button id="home1" class="nav__button">главная</button>
-							<button id="about__nav1" class="nav__button">обо мне</button>
-							<button id="portfolio1" class="nav__button">портфолио</button>
-							<button id="skills1" class="nav__button">мои инструменты</button>
-							<button id="contacts1" class="nav__button">контакты</button>
-						</div>
-					
-				</menu>
-				<p id="header__text">Необычный</p>
-				<h1 id="header__text1">Front-end</h1>
-				<p id="header__text2">Разработчик</p>
+				</div>
 			</div>
-		</header>
-
-	</div>
+			<div class="mobile-menu__container invisible__mobile">
+				<p><span class="material-icons icon__size menu__visible">
+					menu
+				</span></p>
+				<div id="mobile__navigation">
+					<button id="home__mobile">ГЛАВНАЯ</button>
+					<button id="about-me__mobile">ОБО МНЕ</button>
+					<button id="skills__mobile">УМЕНИЯ</button>
+					<button id="portfolio__mobile">ПОТРФОЛИО</button>
+					<button id="contacts__mobile">КОНТАКТЫ</button>
+				</div>
+			</div>
+		</menu>
+		<div class="header__title visible-header__text">
+			<h1>FRONTEND DEVELOPER</h1>
+		</div>
+		<div class="header__text visible-header__text"><p>Качество и креатив!</p></div>
+	</header>
 	<main>
-		<div class="content__container1" id="about">
-			<div class="" id="about__me">
-				<div class="empty__box"></div>
-				<h3 id="about__me__header">ОБО МНЕ</h3>
-				<div class="horizont__line"></div>
-			</div>
-			<div class="about__image__text">
-				<div id="about__image">
-				<img src="image/myPhoto2.jpg" alt="My__photo" id="photo">
-				</div>
-				<div class="about__text" id="about__text">
-					<p>Здравствуйте, меня зовут Дмитрий Варчак, и я начинающий фронтенд-разработчик, который строит новую
-					карьеру на том, что действительно нравится.
-					В течение года я оттачивал свои навыки веб-разработчика, изучая, как создавать веб-приложения с помощью
-					HTML, CSS, JavaScript, React.</p>
+		<!--about me-->
+		<div class="adout-me__container">
+			<div class="about-me__information">
+				<div class="about-me__title"><h2>Обо мне</h2></div>
+				<div class="about-me-information__text">
+					<p>Здравствуйте! Меня зовут Дмитрий, я живу в городе Минск, Республика Беларусь. Имею высшие образование по специальности инженер-механик. Более 20 лет проработал на Белорусской  железной дороге и добился больших успехов. Однако желание заниматься программированием победило, и 2021 году я поступил в Компьютерную академию Шаг на курс FRONT-END разработка. В апреле 2022 года я успешно её закончил и теперь строю новую карьеру на том, что действительно нравиться.</p>
 				</div>
 			</div>
-			
+			<div class="about-me__foto"><img src="images/about-me-photo1.jpg" alt=""></div>
+			<div class="about-me-text__container">
+				<div class="about-me__image"><img src="images/headerBackground.jpg" alt=""></div>
+				<div class="about-me__blind"></div>
+				<div class="about-me-text__title"><p>Дмитрий Варчак</p></div>
+				<div class="about-me__text">
+					<ul>
+						<li>Умею эффективно работать в любой IT команде.</li>
+						<li>В своей работе уверено использую HTML, CSS, JavaScript и фреймворк React.</li>
+						<li>Уверено работаю с целым стеком технологий вебразработки.</li>
+						<li>Разбираюсь в современных методах проектирования и построения Frontчасти вебрешений.</li>
+						<li>Создаю качественный программный код под любые задачи FrontEnd разработки.</li>
+					</ul>
+				</div>
+			</div>
 		</div>
-		<div class="contant__container2" id="slider__box">
-			<div class="" id="content__portfolio">
-				<h3 id="portfolio__header">МОИ РАБОТЫ</h3>
-				<div class="horizont__line"></div>
-			</div>
-			<div id="slider">
-				<button id="left__button" class="slider__button"><span class="material-icons">
-						navigate_before
-					</span></button>
-				<div id="slider__screen">
-					<img src="image/game.jpg" alt="" class="image__portfolio">
-				</div>
-				<button id="right__button" class="slider__button"><span class="material-icons">
-						navigate_next
-					</span></i></button>
-			</div>
-
-		</div>
-		<div class="contant__container3" id="portfolio__container">
-			<div class="empty__box"></div>
-			<div class="" id="content__skills">
-				<h3 id="skills__header">МОИ ИНСТРУМЕНТЫ</h3>
-				<div class="horizont__line"></div>
-			</div>
-			<div id="all__cards__box">
-				<div id="box__first__group">
-					<div id="html__skill" class="card">
+		<!--skills-->
+		<div class="skills__conteiner">
+			<div class="skills-box__cards">
+				<div id="box__first-group">
+					<div id="html__skill" class="odd__card">
+						<div class="skills__title"><h2>Умения</h2></div>
+						<h3 class="skill__name">HTML</h3>
 						<div class="diagram" id="diagram__html">
-							<div class="plug" id="plug__html"></div>
+							<div class="odd__plug" id="plug__html"></div>
 						</div>
-						<p class="skill__name">HTML</p>
+						
 					</div>
-					<div id="css__skil" class="card">
+					<div id="css__skil" class="even__card card__top-padding">
+						<h3 class="skill__name">CSS/SCSS</h3>
 						<div class="diagram" id="diagram__css">
 							<div class="plug" id="plug__css"></div>
 						</div>
-						<p class="skill__name">CSS</p>
 					</div>
 				</div>
-				<div id="box__second__group">
-					<div id="javascript__skill" class="card">
+				<div id="box__second-group">
+					<div id="javascript__skill" class="odd__card card__top-padding">
+						<h3 class="skill__name">JavaScript</h3>
 						<div class="diagram" id="diagram__javascript">
-							<div class="plug" id="plug__javascript"></div>
+							<div class="odd__plug" id="plug__javascript"></div>
 						</div>
-						<p class="skill__name">JavaScript</p>
 					</div>
-					<div id="react__skill" class="card">
+					<div id="react__skill" class="even__card card__top-padding">
+						<h3 class="skill__name">React</h3>
 						<div class="diagram" id="diagram__react">
 							<div class="plug" id="plug__react"></div>
 						</div>
-						<p class="skill__name">React</p>
+						
 					</div>
 				</div>
 			</div>
 		</div>
-		<div class="content__container4" id="contact__container">
-			<div class="empty__box"></div>
-			<div class="" id="content__contact">
-				<h3 class="contact__header">КОНТАКТЫ</h3>
-				<div class="horizont__line"></div>
+		<!--portfolio-->
+		<div class="portfolio">
+			<div class="portfolio__container">
+				<div class="potfolio-text__box">
+					<div class="portfolio-text__title"><h2>Портфолио</h2></div>
+					<div class="portfolio-text__box">
+						<p class="portfolio-text">Здесь будет размещаться пояснительный текст к работам</p>
+					</div>
+				</div>
+				<div class="slider__box">
+					<button id="slider__left"><span class="material-icons">
+						navigate_before
+					</span></button>
+					<div class="slider">
+						<div class="offer__slider-inner">
+							<div class="offer__slide">
+								<img src="images/slider/maket1_1.jpg" alt="">
+							</div>
+							<div class="offer__slide">
+								<img src="images/slider/maket2_1.jpg" alt="">
+							</div>
+							<div class="offer__slide">
+								<img src="images/slider/duhoot.jpg" alt="">
+							</div>
+							<div class="offer__slide">
+								<img src="images/slider/maket3_1.jpg" alt="">
+							</div>
+							<div class="offer__slide">
+								<img src="images/slider/game.jpg" alt="">
+							</div>
+							<div class="offer__slide">
+								<img src="images/slider/instacamp.jpg" alt="">
+							</div>
+						</div>
+					</div>
+					<button id="slider__right"<span class="material-icons">
+						navigate_next
+					</span></button>
+				</div>
 			</div>
-			<div id="contact__form__box">
-				<form action="send.php" method="post" id="feedback__form" name="fedback">
-					<div id="name__emaill__box">
-						<input type="text" name="userName" placeholder="Имя" form="feedback__form">
-						<input type="email" name="userEmail" id="" placeholder="Email" form="feedback__form">
+		</div>
+		<!--contacts-->
+		<div class="contacts">
+			<div class="contacts__container">
+				<div class="left-contacts__box">
+					<div class="left-contacts-text">
+						<div class="contacts__title"><h2>Контакты</h2></div>
+						<div class="contacts-information__text">
+							<p>Связаться со мной:</p>
+							<p><img src="images/phone-3-48.png" alt="" />+375(29)5635697</p>
+						</div>
 					</div>
-					<div id="text__button__box">
-						<textarea name="userText" id="" cols="30" rows="10" placeholder="Ваше сообщение" form="feedback__form"></textarea>
-						<button type="submit" id="contact__button" form="feedback__form">ОТПРАВИТЬ</button>
+				</div>
+				<div class="center-contacts__box">
+					<div class="contacts-email__title"><p>Буду рад Вашему письму</p></div>
+					<form data-contacts action="">
+						<div class="input__box">
+							<input class="name__input" type="text" name="name" placeholder="Имя*"/>
+							
+							<input type="email" name="email" placeholder="Email*"/>
+							<p class="form__error name__error"></p><p class="form__error email__error"></p>
+						</div>
+						<textarea name="text__letter" id="" placeholder="Ваше сообщение*"></textarea>
+						<p class="form__error text__error"></p>
+						<div class="checkbox">
+							<input class="checkbox__input" type="checkbox" name="checkbox" id="checkbox"><label class="checkbox__label" for="checkbox">Даю согласие на обработку персональных данных</label>
+						</div>
+						<button type="button" id="submit__button">ОТПРАВИТЬ</button>
+					</form>
+				</div>
+				<div class="right-contacts__box">
+					<div class="contacts-information__text">
+						<p>Я в социальных сетях</p>
+						<p><a href="http://"><img src="images/facebook-4-48.png" alt="" /></a>
+							<a href="http://"><img src="images/instagram-4-48.png" alt="" /></a>
+							<a href="http://"><img src="images/twitter-4-48.png" alt="" /></a>
+							<a href="http://"><img src="images/linkedin-4-48.png" alt="" /></a>
+						</p>
 					</div>
-					
-				</form>
+
+				</div>
 			</div>
 		</div>
 	</main>
+
 	<footer>
-		<div id="content__container5">
-			<div id="icon__box">
-				<p id="social__icons"><a href="https://www.facebook.com/dmitvar"><img src="image/facebook.png" alt=""></a><a href="https://www.instagram.com/dmitvar73/"><img src="image/instagram.png" alt=""></a><a href="https://twitter.com/dmitvar1"><img src="image/Twitter.png" alt=""></a><a href="https://t.me/Varchak_Frontend"><img src="image/telegram.png" alt=""></a></p>
-			</div>
+		<div class="footer__text">
+			<p><span>&copy;</span> 2022 Дмитрий Варчак / Dmitry Varchak</p>
 		</div>
 	</footer>
 	<script src="js/index.js"></script>
 </body>
-
 </html>

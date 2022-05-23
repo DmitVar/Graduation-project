@@ -1,297 +1,315 @@
-'use strict';
-function app() {
-    const imageArray = ['image/game.jpg', 'image/maket1_1.jpg', 'image/maket1_2.jpg', 'image/maket1_3.jpg', 
-    'image/maket1_4.jpg', 'image/maket1_5.jpg', 'image/maket2_1.jpg', 'image/maket2_2.jpg', 'image/maket3_1.jpg', 
-    'image/maket3_2.jpg', 'image/maket3_3.jpg', 'image/maket3_4.jpg', 'image/maket3_5.jpg', 'image/maket3_6.jpg', 
-    'image/maket3_7.jpg', 'image/maket3_8.jpg'];
-    let scrollValue;
-    let mobileNav = document.getElementById('mobile__nav');
-    let headerSize = document.getElementById('wrapper').clientHeight;
-    let aboutSize = document.getElementById('about').clientHeight;
-    let sliderSize = document.getElementById('slider__box').clientHeight;
-    let portfolioSize = document.getElementById('portfolio__container').clientHeight;
-    let contactsSize = document.getElementById('contact__container').clientHeight;
-    let elHeader = document.getElementById('header');
-    let elSlider = document.getElementById('slider__box');
-    let elPortfolio = document.getElementById('portfolio__container');
-    let elAbout = document.getElementById('about');
-    let elContacts = document.getElementById('contact__container');
-    let navBox = document.getElementById('nav__box');
-    let menuSize = document.getElementById('menu').clientHeight;
-    let homeButton = document.getElementById('home');
-    let aboutButton = document.getElementById('about__nav');
-    let aboutImage = document.getElementById('about__image');
-    let aboutText = document.getElementById('about__text');
-    let portfolioButton = document.getElementById('portfolio');
-    let skillsButton = document.getElementById('skills');
-    let contactsButton = document.getElementById('contacts');
-    let homeButton1 = document.getElementById('home1');
-    let aboutButton1 = document.getElementById('about__nav1');
-    let portfolioButton1 = document.getElementById('portfolio1');
-    let skillsButton1 = document.getElementById('skills1');
-    let contactsButton1 = document.getElementById('contacts1');
-    let buttonLeft = document.getElementById('left__button');
-    let buttonRight = document.getElementById('right__button');
-    let imageBox = document.getElementById('slider__screen');
-    let imageIndex = 0;
-    let imageIndex1;
-    let diagramHtml = document.getElementById('diagram__html');
-    let progresHtml = document.getElementById('plug__html');
-    let currentHtml = 0;
-    let diagramCss = document.getElementById('diagram__css');
-    let progresCss = document.getElementById('plug__css');
-    let currentCss = 0;
-    let diagramJS = document.getElementById('diagram__javascript');
-    let progresJS = document.getElementById('plug__javascript');
-    let currentJS = 0;
-    let diagramReact = document.getElementById('diagram__react');
-    let progresReact = document.getElementById('plug__react');
-    let currentReact = 0;
-    let diagramAnimationStart = true;
-    let aboutMeAnimationStart = true;
-    homeButton.addEventListener('click', ()=> {
-        window.scrollTo(0, 0);
-    });
-    function diagramStart(el, progres, current, stop, color){
-            let timer = setInterval( () => {
-            current = (current >= 359) ? 0: current + 3.6;
-            progres.innerHTML = `${Math.trunc(current / 3.6)}%`;
-            el.style.backgroundImage = `conic-gradient(${color} ${current}deg, white ${current}deg 360deg)`;
-            if((Math.trunc(current / 3.6)) >= stop){
-                clearInterval(timer);
-            }
-        }, 100);
-    }
-   
-    function scrollElement(el) {
-        el.scrollIntoView({ block: "start", inline: "nearest"});
-    }
+function app(){
+const navigation = document.getElementById('navigation'),
+		header = document.getElementById('header'),
+		aboutMe = document.querySelector('.adout-me__container'),
+		skills = document.querySelector('.skills__conteiner'),
+		portfolio = document.querySelector('.portfolio'),
+		contacts = document.querySelector('.contacts'),
+		diagramHtml = document.getElementById('diagram__html'),
+		plugHtml = document.getElementById('plug__html'),
+		diagramCss = document.getElementById('diagram__css'),
+		plugCss = document.getElementById('plug__css'),
+		diagramJS = document.getElementById('diagram__javascript'),
+		plugJS = document.getElementById('plug__javascript'),
+		diagramReact = document.getElementById('diagram__react'),
+		plugReact = document.getElementById('plug__react'),
 
-    aboutButton.addEventListener('click', () => {
-        scrollElement(elAbout);
-    });
-    portfolioButton.addEventListener('click', () =>{
-        scrollElement(elSlider);
-    });
-    skillsButton.addEventListener('click', () => {
-        scrollElement(elPortfolio);
-    });
-    contactsButton.addEventListener('click', () =>{
-        scrollElement(elContacts);
-    });
-    homeButton1.addEventListener('click', () =>{
-        scrollElement(elHeader);
-    });
-    aboutButton1.addEventListener('click', () => {
-        scrollElement(elAbout);
-    });
-    portfolioButton1.addEventListener('click', () =>{
-        scrollElement(elSlider);
-    });
-    skillsButton1.addEventListener('click', () => {
-        scrollElement(elPortfolio);
-    });
-    contactsButton1.addEventListener('click', () =>{
-        scrollElement(elContacts);
-    }),
+		// button
+		homeButton = document.getElementById('home'),
+		homeButtonMobile = document.getElementById('home__mobile'),
+		aboutMeButton = document.getElementById('about__me'),
+		aboutMeButtonMobile = document.getElementById('about-me__mobile'),
+		skillsButton = document.getElementById('skills'),
+		skillsButtonMobile = document.getElementById('skills__mobile'),
+		portfolioButton = document.getElementById('portfolio'),
+		portfolioButtonMobile = document.getElementById('portfolio__mobile'),
+		contactsButton = document.getElementById('contacts'),
+		contactsButtonMobile = document.getElementById('contacts__mobile'),
+		submitButton = document.getElementById('submit__button'),
 
 
-    window.addEventListener('scroll', () => {
-        scrollValue = window.pageYOffset;
-        
+		headerTitle = document.querySelector('.header__title'),
+		headerText = document.querySelector('.header__text');
+let scrollValue;
+const navigationHeight = navigation.offsetHeight,
+	  headerHeight = header.offsetHeight,
+	  aboutMeHeight = aboutMe.offsetHeight,
+	  skillsHeight = skills.offsetHeight,
+	  portfolioHeight = portfolio.offsetHeight,
+	  contactsHeight = contacts.offsetHeight;
+let coordHeader = 0; 
+let coordAboutMe = getCoords(aboutMe).top - navigationHeight;
+let coordSkills = getCoords(skills).top - navigationHeight;
+let coordPortfolio = getCoords(portfolio).top - navigationHeight;
+let coordContacts = getCoords(contacts).top - navigationHeight;
+let diagramAnimationStart = true;
+console.log(coordAboutMe, coordSkills, coordPortfolio, coordContacts)
+function addScrollEventButtons(el, scroll){
+	el.addEventListener('click', () =>{
+		window.scrollTo({
+			top: scroll,
+			behavior: 'smooth'
+		});
+	});
+}
 
-        if (scrollValue >= 0 && scrollValue < 70) {
-            document.getElementById('menu').style.backgroundColor = 'rgba(22, 2, 81, 0)';
-        } else {
-            document.getElementById('menu').style.backgroundColor = 'rgba(22, 2, 81, 0.9)';
-        }
-        if (scrollValue >= 0 && scrollValue <= (headerSize - menuSize)) {
-            homeButton.style.color = 'red';
-            aboutButton.style.color = '#fff';
-            portfolioButton.style.color = '#fff';
-            skillsButton.style.color = '#fff';
-            contactsButton.style.color = '#fff';
-        } else if (scrollValue > (headerSize - menuSize) && scrollValue <= (headerSize + aboutSize - menuSize)) {
-            homeButton.style.color = '#fff';
-            aboutButton.style.color = 'red';
-            portfolioButton.style.color = '#fff';
-            skillsButton.style.color = '#fff';
-            contactsButton.style.color = '#fff';
-        } else if (scrollValue > (headerSize + aboutSize - menuSize) && scrollValue <= 
-                   (headerSize + aboutSize + (sliderSize - menuSize))) {
-            homeButton.style.color = '#fff';
-            aboutButton.style.color = '#fff';
-            portfolioButton.style.color = 'red';
-            skillsButton.style.color = '#fff';
-            contactsButton.style.color = '#fff';
-            
-        } else if (scrollValue > headerSize + aboutSize + sliderSize - menuSize && scrollValue <= 
-                  (headerSize + aboutSize + sliderSize + portfolioSize - menuSize)) {
-            homeButton.style.color = '#fff';
-            aboutButton.style.color = '#fff';
-            skillsButton.style.color = 'red';
-            portfolioButton.style.color = '#fff';
-            contactsButton.style.color = '#fff';
-        } else if (scrollValue > headerSize + aboutSize + sliderSize + portfolioSize - menuSize && scrollValue <= 
-                  (headerSize + aboutSize + sliderSize + portfolioSize + contactsSize - menuSize)) {
-            homeButton.style.color = '#fff';
-            aboutButton.style.color = '#fff';
-            skillsButton.style.color = '#fff';
-            portfolioButton.style.color = '#fff';
-            contactsButton.style.color = 'red';
-        }
+addScrollEventButtons(homeButton, coordHeader);
+addScrollEventButtons(homeButtonMobile, coordHeader);
+addScrollEventButtons(aboutMeButton, coordAboutMe);
+addScrollEventButtons(aboutMeButtonMobile, coordAboutMe);
+addScrollEventButtons(skillsButton, coordSkills);
+addScrollEventButtons(skillsButtonMobile, coordSkills);
+addScrollEventButtons(portfolioButton,  coordPortfolio);
+addScrollEventButtons(portfolioButtonMobile, coordPortfolio);
+addScrollEventButtons(contactsButton, coordContacts);
+addScrollEventButtons(contactsButtonMobile, coordContacts);
 
-        if (scrollValue >= 0 && scrollValue <= (headerSize - menuSize)) {
-            homeButton1.style.color = 'red';
-            aboutButton1.style.color = '#fff';
-            portfolioButton1.style.color = '#fff';
-            skillsButton1.style.color = '#fff';
-            contactsButton1.style.color = '#fff';
-        } else if (scrollValue > (headerSize - menuSize) && scrollValue <= (headerSize + aboutSize - menuSize)) {
-            homeButton1.style.color = '#fff';
-            aboutButton1.style.color = 'red';
-            portfolioButton1.style.color = '#fff';
-            skillsButton1.style.color = '#fff';
-            contactsButton1.style.color = '#fff';
-        } else if (scrollValue > (headerSize + aboutSize - menuSize) && scrollValue <= 
-                  (headerSize + aboutSize + (sliderSize - menuSize))) {
-            homeButton1.style.color = '#fff';
-            aboutButton1.style.color = '#fff';
-            portfolioButton1.style.color = 'red';
-            skillsButton1.style.color = '#fff';
-            contactsButton1.style.color = '#fff';
-            
-        } else if (scrollValue > headerSize + aboutSize + sliderSize - menuSize && scrollValue <= 
-                  (headerSize + aboutSize + sliderSize + portfolioSize - menuSize)) {
-            homeButton1.style.color = '#fff';
-            aboutButton1.style.color = '#fff';
-            skillsButton1.style.color = 'red';
-            portfolioButton1.style.color = '#fff';
-            contactsButton1.style.color = '#fff';
-        } else if (scrollValue > headerSize + aboutSize + sliderSize + portfolioSize - menuSize && scrollValue <= 
-                  (headerSize + aboutSize + sliderSize + portfolioSize + contactsSize - menuSize)) {
-            homeButton1.style.color = '#fff';
-            aboutButton1.style.color = '#fff';
-            skillsButton1.style.color = '#fff';
-            portfolioButton1.style.color = '#fff';
-            contactsButton1.style.color = 'red';
-        }
 
-        if(scrollValue >= headerSize && scrollValue < (headerSize + aboutSize)){
-            
-            setTimeout(() => {
-                if(aboutMeAnimationStart == true){
-                    rotateTextY(aboutImage);
-                    rotateTextY(aboutText);
-                    aboutMeAnimationStart = false;
-                }  
-            }, 100);
-        }
 
-        if(scrollValue > (headerSize + aboutSize) && 
-           scrollValue < (headerSize + aboutSize + sliderSize + portfolioSize)){
-            
-                setTimeout(() => {
-                    if(diagramAnimationStart == true){
-                        diagramStart(diagramHtml, progresHtml, currentHtml, 90, 'green');
-                        diagramStart(diagramCss, progresCss, currentCss, 75, 'grey');
-                        diagramStart(diagramJS, progresJS, currentJS, 80, 'red');
-                        diagramStart(diagramReact, progresReact, currentReact, 60, 'black');
-                        diagramAnimationStart = false;
-                    }  
-                }, 800);
-        }
+function diagramStart(el, progres, current, stop, color){
+	let timer = setInterval(() => {
+	current = (current >= 359) ? 0: current + 3.6;
+	progres.innerHTML = `${Math.trunc(current / 3.6)}%`;
+	el.style.backgroundImage = `conic-gradient(${color} ${current}deg, white ${current}deg 360deg)`;
+	if((Math.trunc(current / 3.6)) >= stop){
+		 clearInterval(timer);
+	}
+}, 100);
+}
 
-    });
-    function rotateTextY(el){
-        let deg = 90;
-        let timer6 = setInterval(() =>{
-            el.style.transform = `rotateY(${deg -= 1}deg)`;
-            if(deg == 0){
-                clearInterval(timer6);
-            }
-        }, 15);
-    }
-    function rotateTextX(el){
-        let deg = 90;
-        let timer6 = setInterval(() =>{
-            el.style.transform = `rotateX(${deg -= 1}deg)`;
-            if(deg == 0){
-                clearInterval(timer6);
-            }
-        }, 15);
-    }
-    function rotateTextZ(el){
-        let deg = 90;
-        let timer6 = setInterval(() =>{
-            el.style.transform = `rotateZ(${deg -= 1}deg)`;
-             if(deg == 0){
-                clearInterval(timer6);
-            }
-        }, 15);
-    }
-    let headerText = document.getElementById('header__text');
-    let headerText1 = document.getElementById('header__text1');
-    let headerText2 = document.getElementById('header__text2');
-    rotateTextY(headerText);
-    rotateTextX(headerText1);
-    rotateTextZ(headerText2);
+function getCoords(elem) {
+	let box = elem.getBoundingClientRect();
+  
+	return {
+	  top: box.top + window.pageYOffset,
+	  right: box.right + window.pageXOffset,
+	  bottom: box.bottom + window.pageYOffset,
+	  left: box.left + window.pageXOffset
+	};
+}
 
-    function moveImageLeft() {
-        imageIndex++;
-        if (imageIndex > imageArray.length - 1) {
-            imageIndex = imageArray.length - 1;
-            return;
-        }
-        let image = document.createElement('img');
-        image.classList.add('image__portfolio');
-        image.setAttribute('src', imageArray[imageIndex]);
-        imageBox.append(image);
-        image.style.top = '0px';
-        image.style.left = '70vw';
-        let timer = setInterval(() => {
-            let i = image.offsetLeft;
-            image.style.left = `${i -= 4}px`;
-            if (i <= 0) {
-                clearInterval(timer);
-            }
-        }, 0.5);
-    }
-    function moveImageRight() {
-        let arr = document.querySelectorAll('.image__portfolio');
-        imageIndex1 = arr.length - 1;
-        if (imageIndex1 == 0) {
-            return;
-        }
-        let i = 0;
-        let timer1 = setInterval(() => {
-            arr[imageIndex1].style.left = `${i += 4}px`;
-            if (arr[imageIndex1].offsetLeft >= arr[imageIndex1].offsetWidth) {
-                clearInterval(timer1);
-                arr[imageIndex1].remove();
-                imageIndex--;
-            }
-        }, 0.5);
-    }
+window.addEventListener('scroll', () =>{
+	scrollValue = window.pageYOffset;
+	if(scrollValue > 0){
+		navigation.style.backgroundColor = 'rgba(27, 29, 31, 0.9)';
+		headerTitle.classList.remove('visible-header__text');
+		headerTitle.classList.add('invisible-header__text');
+		headerText.classList.remove('visible-header__text');
+		headerText.classList.add('invisible-header__text');
+	} else {
+		navigation.style.backgroundColor = 'rgba(27, 29, 31, 0)';
+		headerTitle.classList.remove('invisible-header__text');
+		headerTitle.classList.add('visible-header__text');
+		headerText.classList.remove('invisible-header__text');
+		headerText.classList.add('visible-header__text');
+	}
+	//change button color
+	if(scrollValue < coordAboutMe -1){
+		homeButton.style.color = 'rgb(15, 135, 214)';
+		homeButtonMobile.style.color = 'rgb(15, 135, 214)';
+		aboutMeButton.style.color = 'rgb(255, 255, 255)';
+		aboutMeButtonMobile.style.color = 'rgb(255, 255, 255)';
+		skillsButton.style.color = 'rgb(255, 255, 255)';
+		skillsButtonMobile.style.color = 'rgb(255, 255, 255)';
+		portfolioButton.style.color = 'rgb(255, 255, 255)';
+		portfolioButtonMobile.style.color = 'rgb(255, 255, 255)';
+		contactsButton.style.color = 'rgb(255, 255, 255)';
+		contactsButtonMobile.style.color = 'rgb(255, 255, 255)';
+		console.log(scrollValue);
+	} else if(scrollValue >= coordAboutMe - 1 && scrollValue < coordSkills - 1){
+		homeButton.style.color = 'rgb(255, 255, 255)';
+		homeButtonMobile.style.color = 'rgb(255, 255, 255)';
+		aboutMeButton.style.color = 'rgb(15, 135, 214)';
+		aboutMeButtonMobile.style.color = 'rgb(15, 135, 214)';
+		skillsButton.style.color = 'rgb(255, 255, 255)';
+		skillsButtonMobile.style.color = 'rgb(255, 255, 255)';
+		portfolioButton.style.color = 'rgb(255, 255, 255)';
+		portfolioButtonMobile.style.color = 'rgb(255, 255, 255)';
+		contactsButton.style.color = 'rgb(255, 255, 255)';
+		contactsButtonMobile.style.color = 'rgb(255, 255, 255)';
+		console.log(scrollValue);
+	} else if (scrollValue >= coordSkills -1 && scrollValue < coordPortfolio - 1) {
+		console.log(scrollValue);
+		homeButton.style.color = 'rgb(255, 255, 255)';
+		homeButtonMobile.style.color = 'rgb(255, 255, 255)';
+		aboutMeButton.style.color = 'rgb(255, 255, 255)';
+		aboutMeButtonMobile.style.color = 'rgb255, 255, 255)';
+		skillsButton.style.color = 'rgb(15, 135, 214)';
+		skillsButtonMobile.style.color = 'rgb(15, 135, 214)';
+		portfolioButton.style.color = 'rgb(255, 255, 255)';
+		portfolioButtonMobile.style.color = 'rgb(255, 255, 255)';
+		contactsButton.style.color = 'rgb(255, 255, 255)';
+		contactsButtonMobile.style.color = 'rgb(255, 255, 255)';
+		if(diagramAnimationStart == true){
+			diagramStart(diagramHtml, plugHtml, 0, 85, 'rgb(15, 135, 214)');
+			diagramStart(diagramCss, plugCss, 0, 80, 'rgb(15, 135, 214)');
+			diagramStart(diagramJS, plugJS, 0, 70, 'rgb(15, 135, 214)');
+			diagramStart(diagramReact, plugReact, 0, 60, 'rgb(15, 135, 214)');
+			diagramAnimationStart = false;
+		}
 
-    buttonRight.addEventListener('click', moveImageLeft);
-    buttonLeft.addEventListener('click', moveImageRight);
-    mobileNav.addEventListener('click', () => {
-        document.getElementById('nav__box').classList.toggle('nav__box__invisible');        
-    });
-    let form = document.forms.fedback;
-    let fedbackObj = {};
-    let buttonSubmit = document.getElementById('contact__button');
-    let jsonSubmitObj;
-    buttonSubmit.addEventListener('click', ()=>{
-        fedbackObj.name = form.userName.value;
-        fedbackObj.email = form.userEmail.value;
-        fedbackObj.text = form.userText.value;
-        jsonSubmitObj = JSON.stringify(fedbackObj);
-        console.log(jsonSubmitObj);
-        console.log(fedbackObj);
-    });
-    
+	} else if (scrollValue >= coordPortfolio - 1 && scrollValue < coordContacts -1) {
+		console.log(scrollValue);
+		homeButton.style.color = 'rgb(255, 255, 255)';
+		homeButtonMobile.style.color = 'rgb(255, 255, 255)';
+		aboutMeButton.style.color = 'rgb(255, 255, 255)';
+		aboutMeButtonMobile.style.color = 'rgb255, 255, 255)';
+		skillsButton.style.color = 'rgb(255, 255, 255)';
+		skillsButtonMobile.style.color = 'rgb(255, 255, 255)';
+		portfolioButton.style.color = 'rgb(15, 135, 214)';
+		portfolioButtonMobile.style.color = 'rgb(15, 135, 214)';
+		contactsButton.style.color = 'rgb(255, 255, 255)';
+		contactsButtonMobile.style.color = 'rgb(255, 255, 255)';
+	}  else if (scrollValue >= coordContacts - 1) {
+		homeButton.style.color = 'rgb(255, 255, 255)';
+		homeButtonMobile.style.color = 'rgb(255, 255, 255)';
+		aboutMeButton.style.color = 'rgb(255, 255, 255)';
+		aboutMeButtonMobile.style.color = 'rgb255, 255, 255)';
+		skillsButton.style.color = 'rgb(255, 255, 255)';
+		skillsButtonMobile.style.color = 'rgb(255, 255, 255)';
+		portfolioButton.style.color = 'rgb(255, 255, 255)';
+		portfolioButtonMobile.style.color = 'rgb(255, 255, 255)';
+		contactsButton.style.color = 'rgb(15, 135, 214)';
+		contactsButtonMobile.style.color = 'rgb(15, 135, 214)';
+	}
+	
 
+});
+	//slider
+	const slides = document.querySelectorAll('.offer__slide'),
+		  leftButton = document.getElementById('slider__left'),
+		  rightButton = document.getElementById('slider__right'),
+		  slider = document.querySelector('.slider'),
+		  slidesFild = document.querySelector('.offer__slider-inner'),
+		  portfolioText = document.querySelector('.portfolio-text');
+		  sliderWidth = window.getComputedStyle(slider).width,
+		  portfolioTextArray = [
+			  'Самостоятельная работа верстка сайта по макету Cuda.',
+			  'Самостоятельная работа верстка сайта по макету.',
+			  'Лаболаторная работа верстка сайта по макету Duhoot в Компьютерной академии "Шаг".',
+			  'Самостоятельная работа верстка сайта по макету MYCOMPANY.',
+			  'Экзаменационная работа по JavaScript в Компьютерной академии "Шаг". Реализовать игру найди пару. Игра начинается по нажатию кнопки "Начать игру". В начале игры все карты открываются и через 10 секунд переворачиваются рубашкой вверх. Игроку нужно найти все парные карты.',
+			  'Самостоятельная работа по верстке сайта и реализации логики на JavaScript. С пощью JavaScript выполнен переход по разделам страницы, валидация полей форм с использование регулярных выражений и логика открытия и закрыти модальных окон. Дизайнер сайта Алина Мороз.'
+		  ];
+
+	let slideIndex = 0;
+	let offset = 0;
+	slidesFild.style.width = 100 * slides.length + '%';
+	slidesFild.style.display = 'flex';
+	slidesFild.style.transition = '0.5s all';
+	portfolioText.textContent = portfolioTextArray[slideIndex];
+
+	slides.forEach((el) =>{
+		el.style.width = sliderWidth;
+	});
+	rightButton.addEventListener('click', () =>{
+		if(offset == +sliderWidth.slice(0, sliderWidth.length - 2) * (slides.length - 1)){
+			offset = 0;
+			slideIndex = 0;
+		}else{
+			offset += +sliderWidth.slice(0, sliderWidth.length - 2);
+			slideIndex++;
+		}
+		slidesFild.style.transform = `translateX(-${offset}px)`;
+		portfolioText.textContent = portfolioTextArray[slideIndex];
+	});
+	leftButton.addEventListener('click', () =>{
+		if(offset == 0){
+			offset = +sliderWidth.slice(0, sliderWidth.length - 2) * (slides.length - 1);
+			slideIndex = portfolioTextArray.length - 1;
+		}else{
+			offset -= +sliderWidth.slice(0, sliderWidth.length - 2);
+			slideIndex--;
+		}
+		slidesFild.style.transform = `translateX(-${offset}px)`;
+		portfolioText.textContent = portfolioTextArray[slideIndex];
+	});
+
+	//form
+	const form = document.querySelector('[data-contacts]');
+	const reqEmail = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+	const emailError = document.querySelector('.email__error');
+	const nameError = document.querySelector('.name__error');
+	const textError = document.querySelector('.text__error');
+	const checkbox = document.getElementById('checkbox');
+	let letter = {
+		name: '',
+		email: '',
+		text: ''
+	};
+	let inputName = form.name;
+	let inputEmail = form.email;
+	let textEmail = form.text__letter;
+	submitButton.disabled = true;
+	inputName.addEventListener('input', () =>{
+		if(inputName.value.trim() != ''){
+			letter.name = inputName.value;
+			inputName.style.borderColor = 'green';
+			nameError.textContent = ''; 
+		} else {
+			inputName.style.borderColor = 'red';
+			nameError.textContent = 'Поле не может быть пустым';
+		}
+		if(inputName.value.trim() != '' && reqEmail.test(inputEmail.value) == true && textEmail.value.trim() != '' && checkbox.checked === true){
+			submitButton.disabled = false;
+		}
+	});
+	inputEmail.addEventListener('input', () =>{
+		if(reqEmail.test(inputEmail.value) == true){
+			letter.email = inputEmail.value;
+			inputEmail.style.borderColor = 'green';
+			emailError.textContent = ''; 
+		} else {
+			inputEmail.style.borderColor = 'red';
+			emailError.textContent = 'Введите корректный e-mail';
+		}
+		if(inputName.value.trim() != '' && reqEmail.test(inputEmail.value) == true && textEmail.value.trim() != '' && checkbox.checked === true){
+			submitButton.disabled = false;
+		}
+	});
+	textEmail.addEventListener('input', () =>{
+		if(textEmail.value.trim() != ''){
+			letter.text = textEmail.value;
+			textEmail.style.borderColor = 'green';
+			textError.textContent = ''; 
+		} else {
+			textEmail.style.borderColor = 'red';
+			textError.textContent = 'Поле не может быть пустым';
+		}
+		if(inputName.value.trim() != '' && reqEmail.test(inputEmail.value) == true && textEmail.value.trim() != '' && checkbox.checked === true){
+			submitButton.disabled = false;
+		}
+		checkbox.addEventListener('click', () =>{
+			if(inputName.value.trim() != '' && reqEmail.test(inputEmail.value) == true && textEmail.value.trim() != '' && checkbox.checked === true){
+				submitButton.disabled = false;
+			};
+		});
+	});
+	
+
+	submitButton.addEventListener('click', () =>{
+		console.log(letter);
+		let respons = fetch('sendmail.php', {
+			method: 'POST',
+			body: letter
+		});
+		if(respons.ok){
+			let result = respons.json();
+			alert(result.message);
+			inputName.style.borderColor = '#FFFFFF';
+			inputEmail.style.borderColor = '#FFFFFF';
+			textEmail.style.borderColor = '#FFFFFF';
+			inputName.value = '';
+			inputEmail.value = '';
+			textEmail.value = '';
+			checkbox.checked = false;
+			submitButton.disabled = true;
+		} else {
+			alert('Ошибка')
+		}
+
+
+
+	});
 }
 app();
