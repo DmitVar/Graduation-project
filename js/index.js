@@ -287,7 +287,7 @@ window.addEventListener('scroll', () =>{
 	});
 	//modal windows
 	const modalWindowFetchError = document.querySelector('.modal-window-fetch-error'),
-		  modalWindowFetchOk = document.querySelector('.modal-window-fetch-ok');
+		  	modalWindowFetchOk = document.querySelector('.modal-window-fetch-ok');
 	function showModalWindowFetchMassage(el){
 		el.classList.remove('invisible__mobile');
 		el.classList.add('modal-animation__open');
