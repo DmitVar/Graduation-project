@@ -4,6 +4,9 @@
 	box-sizing: border-box;
 	border: none;
 }
+body{
+	position: relative;
+}
 .invisible{
 	display: none;
 }
@@ -652,4 +655,81 @@ footer{
 }
 .footer__text span{
 	font-size: 1.9vw
+}
+/*modal window*/
+.modal-window-fetch-ok{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(27, 29, 31, 0.7);
+	position: fixed;
+	top: -30vw;
+	left: 0;
+	padding: 12.5vw 0 0 35vw;
+	transform: rotateX(90deg);
+}
+.modal-window-fetch-ok__message{
+	width: 30vw;
+	height: 22.5vw;
+	background-color:#0281D4;
+	padding: 5vw;
+}
+.modal-window-fetch-ok__message p{
+	color:#FFFFFF;
+	font-family: 'Montserrat';
+	font-weight: 400;
+	font-size: 2vw;
+	margin: 1vw 0;
+	text-align: center;
+}
+.modal-window-fetch-error{
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(27, 29, 31, 0.7);
+	position: fixed;
+	top: -30vw;
+	left: 0;
+	padding: 12.5vw 0 0 35vw;
+	transform: rotateX(90deg);
+}
+.modal-window-fetch-error__message{
+	width: 30vw;
+	height: 22.5vw;
+	background-color:#0281D4;
+	padding: 5vw;
+}
+.modal-window-fetch-error__message p{
+	color:#FFFFFF;
+	font-family: 'Montserrat';
+	font-weight: 400;
+	font-size: 1.8vw;
+	margin: 1vw 0;
+	text-align: center;
+}
+.modal-animation__open{
+	animation: modal-open 1s linear forwards;
+}
+.modal-animation__close{
+	animation: modal-close 1s linear forwards;
+}
+@keyframes modal-open {
+	0%{
+		top: -30vw;
+		transform: rotateX(90deg);
+	}
+	100%{
+		top: 0;
+		transform: rotateX(0deg);
+	}
+	
+}
+@keyframes modal-close {
+	0%{
+		top: 0;
+		transform: rotateX(0deg);
+	}
+	100%{
+		top: -30vw;
+		transform: rotateX(90deg);
+	}
+	
 }

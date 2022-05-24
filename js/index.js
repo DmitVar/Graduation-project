@@ -285,8 +285,22 @@ window.addEventListener('scroll', () =>{
 			};
 		});
 	});
+	//modal windows
+	const modalWindowFetchError = document.querySelector('.modal-window-fetch-error'),
+		  modalWindowFetchOk = document.querySelector('.modal-window-fetch-ok');
+	function showModalWindowFetchMassage(el){
+		el.classList.remove('invisible__mobile');
+		el.classList.add('modal-animation__open');
+		setTimeout(() =>{
+			el.classList.remove('modal-animation__open');
+			el.classList.add('modal-animation__close');
+			setTimeout(() =>{
+				el.classList.add('invisible__mobile');
+				el.classList.remove('modal-animation__close');
+			}, 1000);
+		}, 3000);
+	}
 	
-
 	submitButton.addEventListener('click', () =>{
 		console.log(letter);
 		let respons = fetch('sendmail.php', {
@@ -295,7 +309,7 @@ window.addEventListener('scroll', () =>{
 		});
 		if(respons.ok){
 			let result = respons.json();
-			alert(result.message);
+			showModalWindowFetchMassage(modalWindowFetchOk);
 			inputName.style.borderColor = '#FFFFFF';
 			inputEmail.style.borderColor = '#FFFFFF';
 			textEmail.style.borderColor = '#FFFFFF';
@@ -305,7 +319,8 @@ window.addEventListener('scroll', () =>{
 			checkbox.checked = false;
 			submitButton.disabled = true;
 		} else {
-			alert('Ошибка')
+			showModalWindowFetchMassage(modalWindowFetchError);
+			
 		}
 
 
