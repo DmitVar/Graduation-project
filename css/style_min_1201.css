@@ -7,9 +7,6 @@
 body{
 	position: relative;
 }
-.invisible{
-	display: none;
-}
 .invisible__mobile{
 	display: none
 }
@@ -635,6 +632,10 @@ textarea:focus{
 	text-align: justify;
 	line-height: 160%;
 	margin: 0.5vw 0;
+}
+.contacts-information__text img{
+	width: 2.5vw;
+	height: 2.5vw;
 }
 .right-contacts__box{
 	padding: 9vw 0 0 4vw;
