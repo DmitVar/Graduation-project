@@ -6,10 +6,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link href="https://fonts.googleapis.com/css2?family=Koulen&family=Montserrat:wght@300;400;500;600;700;800;900&family=Open+Sans:ital,wght@1,800&family=Oswald:wght@300&display=swap" rel="stylesheet">
-	<link rel="stylesheet" media="(min-width: 350px) and (max-width: 700px)" href="css/style_max_700.css">
-	<link rel="stylesheet" media="(min-width: 701px) and (max-width: 900px)" href="css/style_max_900.css">
-	<link rel="stylesheet" media="(min-width: 901px) and (max-width: 1200px)" href="css/style_max_1200.css">
-	<link rel="stylesheet" media="(min-width: 1201px)" href="css/style_min_1201.css">
+	<link rel="stylesheet" media="(min-width: 320px) and (max-width: 768px) and (orientation: portrait)" href="css/style_max_700.css">
+	<link rel="stylesheet" media="(min-width: 320px) and (max-width: 768px) and (orientation: landscape)" href="css/style_max_900.css">
+	<link rel="stylesheet" media="(min-width: 769px) and (max-width: 1024px)" href="css/style_max_900.css">
+	<link rel="stylesheet" media="(min-width: 1025px) and (max-width: 1200px)" href="css/style_max_1279.css">
+	<link rel="stylesheet" media="(min-width: 1280px)" href="css/style_min_1201.css">
 	<title>DmitryVarchak</title>
 </head>
 <body>
@@ -20,25 +21,25 @@
 			<div class="menu__conteiner">
 				<div class="logo"><p>Dmitry Varchak</p></div>
 				<div id="navigation">
-					<div class="navigation-button__box">
+					<div class="navigation-button__box invisible">
 						<button id="home">ГЛАВНАЯ</button>
 						<button id="about__me">ОБО МНЕ</button>
-						<button id="skills">УМЕНИЯ</button>
+						<button id="skills">НАВЫКИ</button>
 						<button id="portfolio">ПОТРФОЛИО</button>
 						<button id="contacts">КОНТАКТЫ</button>
 					</div>
-				</div>
-			</div>
-			<div class="mobile-menu__container invisible__mobile">
-				<p><span class="material-icons icon__size menu__visible">
-					menu
-				</span></p>
-				<div id="mobile__navigation">
-					<button id="home__mobile">ГЛАВНАЯ</button>
-					<button id="about-me__mobile">ОБО МНЕ</button>
-					<button id="skills__mobile">УМЕНИЯ</button>
-					<button id="portfolio__mobile">ПОТРФОЛИО</button>
-					<button id="contacts__mobile">КОНТАКТЫ</button>
+					<div class="mobile-menu__container invisible__mobile">
+						<p><span class="material-icons">
+							menu
+						</span></p>
+						<div id="mobile__navigation" class="menu__visible">
+							<button id="home__mobile">ГЛАВНАЯ</button>
+							<button id="about-me__mobile">ОБО МНЕ</button>
+							<button id="skills__mobile">НАВЫКИ</button>
+							<button id="portfolio__mobile">ПОТРФОЛИО</button>
+							<button id="contacts__mobile">КОНТАКТЫ</button>
+						</div>
+					</div>
 				</div>
 			</div>
 		</menu>
@@ -64,7 +65,7 @@
 				<div class="about-me__text">
 					<ul>
 						<li>Умею эффективно работать в любой IT команде.</li>
-						<li>В своей работе уверено использую HTML, CSS, JavaScript и фреймворк React.</li>
+						<li>В своей работе уверено использую HTML, CSS/SCSS, JavaScript, GIT и библиотеку React.</li>
 						<li>Уверено работаю с целым стеком технологий вебразработки.</li>
 						<li>Разбираюсь в современных методах проектирования и построения Frontчасти вебрешений.</li>
 						<li>Создаю качественный программный код под любые задачи FrontEnd разработки.</li>
@@ -77,7 +78,7 @@
 			<div class="skills-box__cards">
 				<div id="box__first-group">
 					<div id="html__skill" class="odd__card">
-						<div class="skills__title"><h2>Умения</h2></div>
+						<div class="skills__title"><h2>Навыки</h2></div>
 						<h3 class="skill__name">HTML</h3>
 						<div class="diagram" id="diagram__html">
 							<div class="odd__plug" id="plug__html"></div>

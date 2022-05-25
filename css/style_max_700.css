@@ -10,9 +10,7 @@ body{
 .invisible{
 	display: none;
 }
-.invisible__mobile{
-	display: none
-}
+
 button{
 	outline: none;
 }
@@ -24,7 +22,7 @@ button, a {
 }
 header{
 	width: 100vw;
-	height: 45.63vw;
+	height: 100vh;
 	position: relative;
 	overflow: hidden;
 }
@@ -33,19 +31,19 @@ header img{
 	left: 0;
 	position: absolute;
 	width: 100vw;
-	height: 45.63vw;
+	height: 100vh;
 }
 #blind{
 	top: 0;
 	left: 0;
 	position: absolute;
 	width: 100vw;
-	height: 45.63vw;
+	height: 100vh;
 	background-color: rgba(0, 0, 0, 0.6);
 }
 menu{
 	width: 100vw;
-	height: 5vw;
+	height: 7vh;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -53,12 +51,38 @@ menu{
 #home{
 	color: rgb(15, 135, 214);
 }
+.mobile-menu__container{
+	padding-top: 1vh;
+}
+.mobile-menu__container .material-icons{
+	color: #FFFFFF;
+	font-size: 6vh;
+
+}
+#mobile__navigation{
+	padding-top: 7vh;
+	width: 34vw;
+	height: 100vh;
+	position: absolute;
+	top: 0;
+	right:0vw;
+	background-color: rgba(0, 0, 0, 0.6);
+}
+#mobile__navigation button{
+	background-color: transparent;
+	font-size: 40px;
+	border: none;
+	color:#FFFFFF;
+	font-family: 'Oswald';
+	font-weight: 300;
+	margin: 2vh 2vw;
+}
 .logo{
-	width: 15vw;
-	height: 5vw;
+	width: 80vw;
+	height: 10vh;
 }
 .logo p{
-	font-size: 2.5vw;
+	font-size: 6vh;
 	font-weight: 800;
 	font-family: 'Koulen';
 	color: #FFFFFF;
@@ -71,14 +95,21 @@ menu{
 	justify-content: space-between;
 }
 #navigation{
-	height: 5vw;
+	height: 7vh;
 	left: 0;
 	position: fixed;
-	padding-left: 42vw;
+	padding-left: 85vw;
 	width: 100vw;
 	background-color:rgba(27, 29, 31, 0);
 	z-index: 1000;
 }
+.mobile-menu__container{
+	position: relative;
+}
+.menu__visible{
+	display: none;
+}
+
 .invisible-header__text{
 	animation: headerInvis 1.5s linear forwards;
 }
@@ -116,19 +147,19 @@ menu{
 }
 .header__title{
 	position: absolute;
-	top: 10vw;
-	left: 30vw;
+	top: 30vh;
+	left: 29vw;
 	opacity: 0;
 }
 .header__title h1{
 	font-family: 'Oswald';
 	color: #FFFFFF;
-	font-size: 5vw;
+	font-size: 8vh;
 }
 .header__text{
 	width: 25vw;
 	position: absolute;
-	top: 30vw;
+	top: 70vh;
 	left: 35vw;
 	opacity: 0;
 	border-top: 2.5px solid #0281D4; 
@@ -137,36 +168,39 @@ menu{
 	color:#FFFFFF;
 	font-family: 'Oswald';
 	font-weight: 300;
-	font-size: 2.5vw;
+	font-size: 3vh;
 	margin-left: 1vw;
 	text-align: center;
 }
 /*about me*/
 .adout-me__container{
 	width: 100vw;
-	height: 38vw;
+	height: 93vh;
 	display: flex;
+	flex-wrap: wrap;
 }
 .about-me-text__container{
 	width: 50vw;
+	height: 63vh;
+	overflow: hidden;
 	position: relative;
 }
 .about-me-text__container img{
 	width: 50vw;
-	height: 38vw;
+	height: 63vh;
 }
 .about-me__blind{
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 50vw;
-	height: 38vw;
+	height: 63vh;
 	background-color: rgba(15, 135, 214, 0.85);
 }
 .about-me-text__title{
 	width: 40vw;
-	height: 10vw;
-	padding-top: 4vw;
+	height: auto;
+	padding-top: 1vw;
 	position: absolute;
 	top: 0;
 	left: 5vw;
@@ -176,12 +210,12 @@ menu{
 	color:#FFFFFF;
 	font-family: 'Oswald';
 	font-weight: 300;
-	font-size: 2.5vw;
+	font-size: 4vh;
 }
 .about-me__text{
 	width: 40vw;
 	position: absolute;
-	top: 12vw;
+	top: 13vh;
 	left: 5vw;
 }
 .about-me__text ul li{
@@ -189,52 +223,52 @@ menu{
 	color:#FFFFFF;
 	font-family: 'Montserrat';
 	font-weight: 400;
-	font-size: 1.2vw;
+	font-size: 1.25vh;
 	text-align: justify;
 	line-height: 150%;
 	margin-bottom: 1vw;
 }
 .about-me__foto {
-	width: 25vw;
-	height: 38vw;
+	width: 50vw;
+	height: 63vh;
 }
 .about-me__foto img{
-	width: 25vw;
-	height: 38vw;
+	width: 50vw;
+	height: 63vh;
 }
 .about-me__information {
 	position: relative;
-	width: 25vw;
-	height: 38vw;
+	width: 100vw;
+	height: 30vh;
 	background-color: #1B1D1F;
 }
 .about-me__title{
-	width: 17vw;
-	height: 10vw;
-	padding-top: 4vw;
+	width: 40vw;
+	height: 6vh;
+	padding-top: 1vw;
 	position: absolute;
 	top: 0;
-	left: 5vw;
+	left: 6vw;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 .about-me__title h2{
 	color:#FFFFFF;
 	font-family: 'Oswald';
 	font-weight: 300;
-	font-size: 2.5vw;
+	font-size: 4vh;
 }
 .about-me-information__text{
-	width: 17vw;
-	height: 10vw;
+	width: 90vw;
+	height: 15vh;
 	position: absolute;
-	top: 12vw;
-	left: 5vw;
+	top: 7vh;
+	left: 6vw;
 }
 .about-me-information__text p{
 	color:#FFFFFF;
 	font-family: 'Montserrat';
 	font-weight: 400;
-	font-size: 0.9vw;
+	font-size: 1.25vh;
 	text-align: justify;
 	line-height: 160%;
 }
