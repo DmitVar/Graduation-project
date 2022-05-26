@@ -13,6 +13,8 @@ const navigation = document.getElementById('navigation'),
 		plugJS = document.getElementById('plug__javascript'),
 		diagramReact = document.getElementById('diagram__react'),
 		plugReact = document.getElementById('plug__react'),
+		mobileMenu = document.querySelector('.mobile-menu__container'),
+		mobileNavigation = document.getElementById('mobile__navigation'),
 
 		// button
 		homeButton = document.getElementById('home'),
@@ -30,7 +32,10 @@ const navigation = document.getElementById('navigation'),
 
 		headerTitle = document.querySelector('.header__title'),
 		headerText = document.querySelector('.header__text');
-let scrollValue;
+		mobileMenu.addEventListener('click', () =>{
+			mobileNavigation.classList.toggle('menu__visible');
+		});
+	let scrollValue;
 const navigationHeight = navigation.offsetHeight,
 	  headerHeight = header.offsetHeight,
 	  aboutMeHeight = aboutMe.offsetHeight,
@@ -43,7 +48,6 @@ let coordSkills = getCoords(skills).top - navigationHeight;
 let coordPortfolio = getCoords(portfolio).top - navigationHeight;
 let coordContacts = getCoords(contacts).top - navigationHeight;
 let diagramAnimationStart = true;
-console.log(coordAboutMe, coordSkills, coordPortfolio, coordContacts)
 function addScrollEventButtons(el, scroll){
 	el.addEventListener('click', () =>{
 		window.scrollTo({
@@ -107,37 +111,48 @@ window.addEventListener('scroll', () =>{
 	if(scrollValue < coordAboutMe -1){
 		homeButton.style.color = 'rgb(15, 135, 214)';
 		homeButtonMobile.style.color = 'rgb(15, 135, 214)';
+
 		aboutMeButton.style.color = 'rgb(255, 255, 255)';
 		aboutMeButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		skillsButton.style.color = 'rgb(255, 255, 255)';
 		skillsButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		portfolioButton.style.color = 'rgb(255, 255, 255)';
 		portfolioButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		contactsButton.style.color = 'rgb(255, 255, 255)';
 		contactsButtonMobile.style.color = 'rgb(255, 255, 255)';
-		console.log(scrollValue);
+	
 	} else if(scrollValue >= coordAboutMe - 1 && scrollValue < coordSkills - 1){
 		homeButton.style.color = 'rgb(255, 255, 255)';
 		homeButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		aboutMeButton.style.color = 'rgb(15, 135, 214)';
 		aboutMeButtonMobile.style.color = 'rgb(15, 135, 214)';
+
 		skillsButton.style.color = 'rgb(255, 255, 255)';
 		skillsButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		portfolioButton.style.color = 'rgb(255, 255, 255)';
 		portfolioButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		contactsButton.style.color = 'rgb(255, 255, 255)';
 		contactsButtonMobile.style.color = 'rgb(255, 255, 255)';
-		console.log(scrollValue);
+
 	} else if (scrollValue >= coordSkills -1 && scrollValue < coordPortfolio - 1) {
-		console.log(scrollValue);
 		homeButton.style.color = 'rgb(255, 255, 255)';
 		homeButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		aboutMeButton.style.color = 'rgb(255, 255, 255)';
-		aboutMeButtonMobile.style.color = 'rgb255, 255, 255)';
+		aboutMeButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		skillsButton.style.color = 'rgb(15, 135, 214)';
 		skillsButtonMobile.style.color = 'rgb(15, 135, 214)';
+
 		portfolioButton.style.color = 'rgb(255, 255, 255)';
 		portfolioButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		contactsButton.style.color = 'rgb(255, 255, 255)';
 		contactsButtonMobile.style.color = 'rgb(255, 255, 255)';
 		if(diagramAnimationStart == true){
@@ -149,26 +164,33 @@ window.addEventListener('scroll', () =>{
 		}
 
 	} else if (scrollValue >= coordPortfolio - 1 && scrollValue < coordContacts -1) {
-		console.log(scrollValue);
 		homeButton.style.color = 'rgb(255, 255, 255)';
 		homeButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		aboutMeButton.style.color = 'rgb(255, 255, 255)';
-		aboutMeButtonMobile.style.color = 'rgb255, 255, 255)';
+		aboutMeButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		skillsButton.style.color = 'rgb(255, 255, 255)';
 		skillsButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		portfolioButton.style.color = 'rgb(15, 135, 214)';
 		portfolioButtonMobile.style.color = 'rgb(15, 135, 214)';
+
 		contactsButton.style.color = 'rgb(255, 255, 255)';
 		contactsButtonMobile.style.color = 'rgb(255, 255, 255)';
 	}  else if (scrollValue >= coordContacts - 1) {
 		homeButton.style.color = 'rgb(255, 255, 255)';
 		homeButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		aboutMeButton.style.color = 'rgb(255, 255, 255)';
-		aboutMeButtonMobile.style.color = 'rgb255, 255, 255)';
+		aboutMeButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		skillsButton.style.color = 'rgb(255, 255, 255)';
 		skillsButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		portfolioButton.style.color = 'rgb(255, 255, 255)';
 		portfolioButtonMobile.style.color = 'rgb(255, 255, 255)';
+
 		contactsButton.style.color = 'rgb(15, 135, 214)';
 		contactsButtonMobile.style.color = 'rgb(15, 135, 214)';
 	}

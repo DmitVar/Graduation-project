@@ -7,9 +7,6 @@
 body{
 	position: relative;
 }
-.invisible{
-	display: none;
-}
 .invisible__mobile{
 	display: none
 }

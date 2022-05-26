@@ -70,7 +70,7 @@ menu{
 }
 #mobile__navigation button{
 	background-color: transparent;
-	font-size: 40px;
+	font-size: 30px;
 	border: none;
 	color:#FFFFFF;
 	font-family: 'Oswald';
@@ -223,7 +223,7 @@ menu{
 	color:#FFFFFF;
 	font-family: 'Montserrat';
 	font-weight: 400;
-	font-size: 1.25vh;
+	font-size: 1.7vh;
 	text-align: justify;
 	line-height: 150%;
 	margin-bottom: 1vw;
@@ -268,67 +268,67 @@ menu{
 	color:#FFFFFF;
 	font-family: 'Montserrat';
 	font-weight: 400;
-	font-size: 1.25vh;
+	font-size: 1.7vh;
 	text-align: justify;
 	line-height: 160%;
 }
 /*skills*/
 .skills__conteiner{
 	width: 100vw;
+	height: 100vh;
 }
 .skills-box__cards{
-	display: flex;
 }
 #box__first-group{
-	width: 50vw;
+	width: 100vw;
 	display: flex;
 }
 #box__second-group{
-	width: 50vw;
+	width: 100vw;
 	display: flex;
 }
 .skills__title{
-	margin-left: 5vw;
-	width: 17vw;
-	height: 10vw;
-	padding-top: 4vw;
+	width: 40vw;
+	height: 6vh;
+	padding-top: 1vw;
+	margin-left: 6vw;
 	border-bottom: 1px solid rgba(27, 29, 31, 0.6);
 }
 .skills__title h2{
 	color:rgb(27, 29, 31);
 	font-family: 'Oswald';
 	font-weight: 300;
-	font-size: 2.5vw;
+	font-size: 4vh;
 }
 .odd__card{
-	width: 25vw;
-	height: 38vw;
+	width: 50vw;
+	height: 50vh;
 }
 .even__card{
-	width: 25vw;
-	height: 38vw;
+	width: 50vw;
+	height: 50vh;
 	background-color:rgba(27, 29, 31, 0.6);
 }
 .odd__card h3{
 	color:rgb(27, 29, 31);
 	font-family: 'Oswald';
 	font-weight: 300;
-	font-size: 1.5vw;
-	margin-left: 5vw;
+	font-size: 3vh;
+	margin-left: 5vh;
 }
 .even__card h3{
 	color:rgb(255, 255, 255);
 	font-family: 'Oswald';
 	font-weight: 300;
-	font-size: 1.5vw;
-	margin-left: 5vw;
+	font-size: 3vh;
+	margin-left: 5vh;
 }
 .card__top-padding{
 	padding-top: 10vw;
 }
 .diagram {
-	width: 20vw;
-	height: 20vw;
+	width: 30vh;
+	height: 30vh;
 	border-radius: 50%;
 	margin: 1vmin auto 0;
 	display: flex;
@@ -336,27 +336,27 @@ menu{
 	align-items: center;
 }
 .plug {
-	width: 17vw;
-	height: 17vw;
+	width: 27vh;
+	height: 27vh;
 	border-radius: 50%;
 	background-color: white;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-family: "Montserrat";
-	font-size: 3vw;
+	font-size: 5vh;
 	color: rgb(15, 135, 214);
 }
 .odd__plug {
-	width: 17vw;
-	height: 17vw;
+	width: 27vh;
+	height: 27vh;
 	border-radius: 50%;
 	background-color: #767779;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	font-family: "Montserrat";
-	font-size: 3vw;
+	font-size: 5vh;
 	color: rgb(255, 255, 255);
 }
 /*portfolio*/
@@ -364,47 +364,46 @@ menu{
 	width: 100vw;
 }
 .portfolio__container{
-	display: flex;
 }
 .potfolio-text__box{
 	padding: 0 0 0 5vw;
-	width: 25vw;
-	height: 38vw;
+	width: 100vw;
+	height: 53vh;
 	background-color:rgb(27, 29, 31);
 }
 .portfolio-text__title{
-	width: 17vw;
-	height: 10vw;
-	padding-top: 4vw;
+	width: 40vw;
+	height: 6vh;
+	padding-top: 1vw;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 .portfolio-text__title h2{
 	color:#FFFFFF;
 	font-family: 'Oswald';
 	font-weight: 300;
-	font-size: 2.5vw;
+	font-size: 4vh;
 }
 .portfolio-text__box{
-	width: 17vw;
+	width: 90vw;
 	padding-top: 5vw;
 }
 .portfolio-text{
 	color:#FFFFFF;
 	font-family: 'Montserrat';
 	font-weight: 400;
-	font-size: 0.9vw;
+	font-size: 1.8vh;
 	text-align: justify;
 	line-height: 160%;
 }
 .slider__box{
 	position: relative;
-	width: 75vw;
-	height: 38vw;
+	width: 100vw;
+	height: 50.76vw;
 }
 .slider__box button{
 	display: block;
 	width: 5vw;
-	height: 38vw;
+	height: 50.76vw;
 }
 #slider__left{
 	position: absolute;
@@ -424,18 +423,19 @@ menu{
 	color: rgb(6, 66, 107);
 	text-align: left;
 	outline: none;
+	z-index: 1000;
 }
 .material-icons{
 	font-size: 4vw;	
 }
 .slider{
-	width: 75vw;
-	height: 38vw;
+	width: 100vw;
+	height: 50.76vw;
 	overflow: hidden;
 }
 
 .offer__slider{
-	width:75vw;
+	width:100vw;
 	display:flex;
 	flex-direction:column;
 	align-items:flex-end
@@ -443,8 +443,8 @@ menu{
 
 
 .offer__slide{
-	width: 75vw;
-	height:38vw;
+	width: 100vw;
+	height: 50.76vw;
 }
 .offer__slide img{
 	width:100%;
@@ -453,46 +453,46 @@ menu{
 }
 /*contacts*/
 .contacts__container{
-	display: flex;
 }
 .left-contacts__box{
-	width: 25vw;
-	height: 38vw;
+	width: 100vw;
+	height: 20vh;
 	background-color:rgb(15, 135, 214);
 	padding: 0 0 0 5vw;
 }
 .center-contacts__box{
-	width: 50vw;
-	height: 38vw;
+	width: 100vw;
+	height: 55vh;
 	background-color:rgb(27, 29, 31);
 }
 .right-contacts__box{
-	width: 25vw;
-	height: 38vw;
+	width: 100vw;
+	height: 15vh;
 	background-color:rgb(15, 135, 214);
+	padding: 4vw 0 0 4vw;
 }
 .contacts__title{
-	width: 17vw;
-	height: 10vw;
-	padding-top: 4vw;
+	width: 40vw;
+	height: 6vh;
+	padding-top: 1vw;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.6);
 }
 .contacts__title h2{
 	color:#FFFFFF;
 	font-family: 'Oswald';
 	font-weight: 300;
-	font-size: 2.5vw;
+	font-size: 4vh;
 }
 .contacts-email__title{
-	width: 30vw;
+	width: 70vw;
 	height: 10vw;
-	padding: 4vw 0 0 5vw;
+	padding: 0 0 0 5vw;
 }
 .contacts-email__title p{
 	color:#FFFFFF;
 	font-family: 'Oswald';
 	font-weight: 300;
-	font-size: 2.5vw;
+	font-size: 4vh;
 }
 input:focus{
 	border-color:#0281D4;
@@ -503,8 +503,8 @@ textarea:focus{
 	background-color: transparent;
 }
 textarea{
-	width: 39vw;
-	height: 10vw;
+	width: 87vw;
+	height: 30vw;
 	outline: none;
 	border: 1px solid #FFFFFF;
 	background-color: transparent;
@@ -514,7 +514,7 @@ textarea{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 300;
-	font-size: 0.94vw;
+	font-size: 4vw;
 	line-height: 122.22%;
 	display: block;
 	resize: none;
@@ -526,11 +526,11 @@ textarea{
 	margin-top: 1vw;
 }
 .checkbox__label{
-	width: 30vw;
+	width: 70vw;
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 300;
-	font-size: 0.94vw;
+	font-size: 2vw;
 	line-height: 122.22%;
 	color: #FFFFFF;
 	display: inline-flex;
@@ -544,19 +544,19 @@ textarea{
 .checkbox__label::before{
 	content: "";
 	align-self: flex-start;
-	flex: 0 0 1.5vw;
-	height: 1.5vw;
+	flex: 0 0 4vw;
+	height: 4vw;
 	background-color: transparent;
 	border: 1px solid #FFFFFF;
 	margin-right: 0.5vw;
 }
 .checkbox__label::after{
 	content: "";
-	width: 1vw;
-	height: 1vw;
+	width: 3vw;
+	height: 3vw;
 	position: absolute;
-	top: 0.3vw;
-	left: 0.3vw;
+	top: 0.6vw;
+	left: 0.6vw;
 	background-color: #0281D4;
 	transform: scale(0);
 }
@@ -570,8 +570,8 @@ form{
 input {
 	display: block;
 	outline: none;
-	width: 19vw;
-	height: 3.13vw;
+	width: 43vw;
+	height: 7vw;
 	border: 1px solid #FFFFFF;
 	background-color: transparent;
 	color:#FFFFFF;
@@ -580,7 +580,7 @@ input {
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 300;
-	font-size: 0.94vw;
+	font-size: 4vw;
 	line-height: 122.22%
 }
 input:focus{
@@ -602,7 +602,7 @@ textarea:focus{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 300;
-	font-size: 0.94vw;
+	font-size: 4vw;
 	line-height: 122.22%;
 }
 :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
@@ -610,7 +610,7 @@ textarea:focus{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 300;
-	font-size: 0.94vw;
+	font-size: 4vw;
 	line-height: 122.22%;
 }
 ::-moz-placeholder { /* Mozilla Firefox 19+ */
@@ -618,7 +618,7 @@ textarea:focus{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 300;
-	font-size: 0.94vw;
+	font-size: 4vw;
 	line-height: 122.22%;
 }
 :-ms-input-placeholder { /* Internet Explorer 10+ */
@@ -626,26 +626,26 @@ textarea:focus{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 300;
-	font-size: 0.94vw;
+	font-size: 4vw;
 	line-height: 122.22%;
 }
 #submit__button{
 	display: block;
-	width: 39vw;
-	height: 3vw;
+	width: 87vw;
+	height: 7vw;
 	color:#FFFFFF;
-	font-size: 1.5vw;
+	font-size: 4vw;
 	font-family: 'Oswald';
 	font-style: normal;
 	font-weight: 300;
 	background-color:#0281D4;
 	margin-top: 1vw;
 	margin-bottom: 0.5vw;
-	border-radius: 1.5vw;
+	border-radius: 3.5vw;
 }
 .form__error{
-	width: 19vw;
-	height: 1vw;
+	width: 42vw;
+	height: 2vh;
 	color: red;
 	margin-right: 1vw;
 	font-family: 'Montserrat';
@@ -655,8 +655,7 @@ textarea:focus{
 }
 
 .contacts-information__text{
-	padding-top: 4vw;
-	width: 17vw;
+	width: 90vw;
 	height: 10vw;
 	top: 12vw;
 	left: 5vw;
@@ -665,18 +664,16 @@ textarea:focus{
 	color:#FFFFFF;
 	font-family: 'Montserrat';
 	font-weight: 400;
-	font-size: 1.5vw;
+	font-size: 2vh;
 	text-align: justify;
 	line-height: 160%;
 	margin: 0.5vw 0;
 }
 .contacts-information__text img{
-	width: 2.5vw;
-	height: 2.5vw;
+	width: 2.5vh;
+	height: 2.5vh;
 }
-.right-contacts__box{
-	padding: 9vw 0 0 4vw;
-}
+
 
 footer{
 	width: 100vw;
