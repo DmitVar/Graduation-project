@@ -653,7 +653,7 @@ textarea:focus{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 300;
-	
+	font-size: 2vw;
 }
 
 .contacts-information__text{
