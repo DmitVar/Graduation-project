@@ -83,15 +83,15 @@ menu{
 	height: 10vh;
 }
 .logo p{
-	font-size: 6vh;
+	font-size: 5vh;
 	font-weight: 800;
 	font-family: 'Koulen';
 	color: #FFFFFF;
 }
 .menu__conteiner{
-	padding: 0 15vw;
+	padding: 0 10vw;
 	width: 100vw;
-	height: 5vw;
+	height: 10vh;
 	display: flex;
 	justify-content: space-between;
 }
@@ -149,19 +149,20 @@ menu{
 .header__title{
 	position: absolute;
 	top: 30vh;
-	left: 29vw;
+	left: 7vw;
 	opacity: 0;
 }
 .header__title h1{
 	font-family: 'Oswald';
 	color: #FFFFFF;
 	font-size: 8vh;
+	text-align: center;
 }
 .header__text{
 	width: 25vw;
 	position: absolute;
 	top: 70vh;
-	left: 35vw;
+	left: 40vw;
 	opacity: 0;
 	border-top: 2.5px solid #0281D4; 
 }
@@ -211,7 +212,7 @@ menu{
 	color:#FFFFFF;
 	font-family: 'Oswald';
 	font-weight: 300;
-	font-size: 4vh;
+	font-size: 3vh;
 }
 .about-me__text{
 	width: 40vw;
